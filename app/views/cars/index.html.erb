@@ -1,10 +1,11 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Cars</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Make model</th>
       <th>Year</th>
       <th>Kms</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
+        <td><%= image_tag pin.image.url(:medium) %></td>
         <td><%= car.make_model %></td>
         <td><%= car.year %></td>
         <td><%= car.kms %></td>
