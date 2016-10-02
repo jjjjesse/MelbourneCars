@@ -18,7 +18,7 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <td><%= image_tag pin.image.url(:medium) %></td>
+        <td><%= image_tag car.image.url(:medium) %></td>
         <td><%= car.make_model %></td>
         <td><%= car.year %></td>
         <td><%= car.kms %></td>
