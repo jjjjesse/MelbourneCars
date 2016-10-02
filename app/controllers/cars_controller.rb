@@ -1,5 +1,7 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /cars
   # GET /cars.json
@@ -24,7 +26,7 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
-    @car = Car.new(car_params)
+    @car = current_user.cars.build(car_params)
 
     respond_to do |format|
       if @car.save
@@ -65,6 +67,11 @@ class CarsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_car
       @car = Car.find(params[:id])
+    end
+
+    def correct_user
+      @car = current_user.cars.find_by(id: params[:id])
+      redirect_to cars_path, notice: "Not authorized to edit this car" if @car.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
