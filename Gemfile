@@ -14,11 +14,13 @@ gem 'devise', '~> 4.1'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
 gem 'masonry-rails', '~> 0.2.0'
+# Used for Facebook integration
+gem "koala", "~> 2.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-   gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do
