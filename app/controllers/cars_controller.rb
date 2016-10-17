@@ -4,8 +4,10 @@ class CarsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /cars
   # GET /cars.json
+
+  #adds new cars to the top
   def index
-    @cars = Car.all
+    @cars = Car.all.order("created_at DESC")
   end
 
   # GET /cars/1
