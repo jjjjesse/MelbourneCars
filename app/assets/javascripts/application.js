@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded.min
-//= require bootstrap
+//= require jquery3
+//= require popper
 //= require bootstrap-sprockets
 //= require_tree .
