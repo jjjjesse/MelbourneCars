@@ -6,7 +6,7 @@
           <%= image_tag car.image.url(:large) %>
           <div class="caption">
             <h2><%= car.make_model %> <%= car.year %></h2>
-            <h4><%= car.kms %>kms</h4>
+            <h4><%= car.kms[:-3] %>,<%= car.kms[-3:] %> kms</h4>
             <p><%= car.description %></p>
             <h3>$<%= car.price %></h3>
 
