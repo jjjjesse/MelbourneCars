@@ -6,4 +6,5 @@ module CarsHelper
         @number_out = number.to_s
       end
       @number_out
+    end
 end
