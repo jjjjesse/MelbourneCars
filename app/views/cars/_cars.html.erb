@@ -8,7 +8,7 @@
             <h2><%= car.make_model %> <%= car.year %></h2>
             <h4><%= add_commas(car.kms) %> kms</h4>
             <p><%= car.description %></p>
-            <h3>$<%= car.price %></h3>
+            <h3>$<%= add_commas(car.price) %></h3>
 
             <% if user_signed_in? %>
               <p><%= link_to 'Edit', edit_car_path(car), class: "btn btn-primary" %>
