@@ -6,13 +6,7 @@
           <%= image_tag car.image.url(:large) %>
           <div class="caption">
             <h2><%= car.make_model %> <%= car.year %></h2>
-            <h4>
-            <% if car.kms.to_s.length > 4 %>
-              <%= car.kms.to_s[0..-2] %>,<%= car.kms.to_s[-3..-1] %>
-            <% else %>
-              <%= car.kms %>
-            <% end %>
-            kms</h4>
+            <h4><%= add_commas(car.kms) %> kms</h4>
             <p><%= car.description %></p>
             <h3>$<%= car.price %></h3>
 
