@@ -10,11 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require masonry/jquery.masonry
-//= require masonry/jquery.imagesloaded.min
 //= require jquery3
+//= require jquery_ujs
 //= require popper
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require_tree .
