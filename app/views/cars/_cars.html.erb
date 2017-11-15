@@ -1,13 +1,12 @@
-<div id="cars" class="row transitions-enabled">
+  <div class="card-columns">
   <% @cars.each do |car| %>
-    <div class="box">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <%= image_tag car.image.url(:large) %>
-          <div class="caption">
-            <h2><%= car.make_model %> <%= car.year %></h2>
+    <div class="card">
+        
+          <%= image_tag car.image.url(:large) class="card-img-top" %>
+          <div class="card-block">
+            <h2 class="card-title"><%= car.make_model %> <%= car.year %></h2>
             <h4><%= add_commas(car.kms) %> kms</h4>
-            <p><%= car.description %></p>
+            <p class="card-text"><%= car.description %></p>
             <h3>$<%= add_commas(car.price) %></h3>
 
             <% if user_signed_in? %>
@@ -15,10 +14,10 @@
               <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning"  %></p>
             <% end %>
           </div>
-        </div>
-      </div>
+        
     </div>
   <% end %>
+  </div>
 </div>
 
 
