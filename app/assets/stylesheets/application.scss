@@ -1,2 +1,11 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+body {
+  height: 100%;
+  background-color: #212121;
+}
+
+.card-block {
+  padding: 5px;
+}
