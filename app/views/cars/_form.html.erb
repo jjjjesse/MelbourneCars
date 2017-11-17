@@ -36,6 +36,11 @@
     <%= f.number_field :price, class: "form-control" %>
   </div>
 
+  <div class="field form-group">
+    <%= f.label :sold %>
+    <%= f.checkbox :sold, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, class: "form-control" %>
