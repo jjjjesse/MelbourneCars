@@ -19,11 +19,11 @@ body {
 .sold {
     opacity: 1;
     filter: alpha(opacity=1000); /* For IE8 and earlier */
-    background-color: red;
+    background-color: #DD2C00;
     font-size: 50px;
-    color: white;
+    color: #FAFAFA;
     font-weight: bold;
     padding: 10px;
     text-align: center;
-    vertical-align: text-middle;
+    vertical-align: middle;  
 }
