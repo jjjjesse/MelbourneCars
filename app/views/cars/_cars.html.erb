@@ -1,5 +1,5 @@
   <div class="card-columns">
-  <% @cars.each do |car| %>
+  <% @cars.unsold.each do |car| %>
     <div class="card">
         
           <%= image_tag car.image.url(:large), :class =>"card-img-top img-fluid" %>
@@ -17,6 +17,26 @@
         
     </div>
   <% end %>
+
+  <% @cars.sold.each do |car| %>
+      <div class="card">
+             
+            <%= image_tag car.image.url(:large), :class =>"card-img-top img-fluid" %>
+             <div class="card-img-overlay sold">SOLD</div>
+            <div class="card-block">
+              <h2 class="card-title"><%= car.make_model %> <%= car.year %></h2>
+              <h4><%= add_commas(car.kms) %> kms</h4>
+              <p class="card-text"><%= car.description %></p>
+              <h3>$<%= add_commas(car.price) %></h3>
+
+              <% if user_signed_in? %>
+                <p><%= link_to 'Edit', edit_car_path(car), class: "btn btn-primary" %>
+                <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning"  %></p>
+              <% end %>
+            </div>
+          
+      </div>
+    <% end %>
   </div>
 </div>
 
