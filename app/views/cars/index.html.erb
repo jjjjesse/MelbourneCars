@@ -1,5 +1,5 @@
 <div id="maybethis" class="transitions-enabled"> 
-    <% @cars.each do |car| %>
+    <% @cars.unsold.each do |car| %>
       <div class="box">
       
         <%= image_tag car.image.url(:medium) %>
