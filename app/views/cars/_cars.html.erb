@@ -20,9 +20,9 @@
 
   <% @cars.sold.each do |car| %>
       <div class="card">
-             
+             <span><h5 class="sold">SOLD</h5></span>
             <%= image_tag car.image.url(:large), :class =>"card-img-top img-fluid fade" %>
-             <div class="card-img-overlay"><h5 class="sold align-middle my-auto">SOLD</h5></div>
+             
             <div class="card-block">
               <h2 class="card-title"><%= car.make_model %> <%= car.year %></h2>
               <h4><%= add_commas(car.kms) %> kms</h4>
